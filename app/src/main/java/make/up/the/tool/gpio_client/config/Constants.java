@@ -1,0 +1,33 @@
+package make.up.the.tool.gpio_client.config;
+
+/**
+ * @author Anatolii Nosenko
+ * @version 30 April 2018
+ */
+public class Constants {
+    public static final int DEVICE_COUNT = 3;
+
+    public static final String DEVICE_A = "DEVICE_A";
+    public static final String DEVICE_B = "DEVICE_B";
+    public static final String DEVICE_C = "DEVICE_C";
+
+    public static final String CUSTOM_NAME = "CustomName";
+    public static final String HOST = "Host";
+    public static final String PORT = "Port";
+    public static final String LOGIN = "Login";
+    public static final String PASSWORD = "Password";
+
+    public static final String HTTPS = "http://";
+    public static final String COLON = ":";
+    public static final String SLASH = "/";
+    public static final String EMPTY = "";
+    public static final String AUTHORIZATION = "Authorization";
+    public static final String GET_MODE = "getMode";
+    public static final String MODE = "mode";
+    public static final String MODE_RELAY = "relay";
+
+    public static final String DISCONNECTED = "DISCONNECTED";
+    public static final String LOG_MARKER = "\n\n\n\n" +
+            "##############" +
+            "\n\n\n\n";
+}

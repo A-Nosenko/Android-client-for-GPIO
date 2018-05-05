@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="deviceViewModel"
+            type="make.up.the.tool.gpio_client.view_model.DeviceViewModel" />
+
+        <variable
+            name="settingButton"
+            type="make.up.the.tool.gpio_client.view_model.button_interfaces.SettingButton" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_connect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> deviceViewModel.connect()}"
+                android:text="@{deviceViewModel.isConnected ? @string/disconnect : @string/connect}" />
+
+            <Button
+                android:id="@+id/button_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{(v) -> settingButton.openSetting()}"
+                android:text="@string/setting" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{deviceViewModel.isConnectingInProcess ? View.VISIBLE : View.INVISIBLE}" />
+
+        <!-- Relays will be allocated in this view. -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+</layout>
