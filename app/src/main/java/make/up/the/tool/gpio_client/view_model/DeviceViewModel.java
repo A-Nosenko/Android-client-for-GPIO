@@ -13,11 +13,11 @@ import org.json.JSONObject;
 import make.up.the.tool.gpio_client.BR;
 import make.up.the.tool.gpio_client.model.Device;
 import make.up.the.tool.gpio_client.network.Connector;
+import make.up.the.tool.gpio_client.parsers.ModeParser;
 import make.up.the.tool.gpio_client.view_model.button_interfaces.ConnectionButton;
 
 import static make.up.the.tool.gpio_client.config.Constants.DISCONNECTED;
 import static make.up.the.tool.gpio_client.config.Constants.LOG_MARKER;
-import static make.up.the.tool.gpio_client.config.Constants.MODE;
 import static make.up.the.tool.gpio_client.config.Constants.MODE_RELAY;
 
 /**
@@ -135,7 +135,7 @@ public class DeviceViewModel extends BaseObservable implements ConnectionButton 
 
             try {
                 JSONObject jsonObject = new JSONObject(result);
-                if (jsonObject.get(MODE).equals(MODE_RELAY)) {
+                if (ModeParser.parse(jsonObject).equals(MODE_RELAY)) {
                     setConnected(true);
                 }
             } catch (JSONException e) {

@@ -11,7 +11,10 @@ public class Constants {
     public static final String DEVICE_B = "DEVICE_B";
     public static final String DEVICE_C = "DEVICE_C";
 
-    public static final String CUSTOM_NAME = "CustomName";
+    public static final String ID = "id";
+    public static final String TECHNICAL_NAME = "technicalName";
+    public static final String ENABLED = "enabled";
+    public static final String CUSTOM_NAME = "customName";
     public static final String HOST = "Host";
     public static final String PORT = "Port";
     public static final String LOGIN = "Login";
