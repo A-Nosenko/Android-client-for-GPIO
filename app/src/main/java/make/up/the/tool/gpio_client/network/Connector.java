@@ -42,9 +42,15 @@ public class Connector {
     }
 
     public static String checkRelayMode(Device device) {
+        String host = device.getHost();
+        String port = device.getPort();
+
+        if (host == null || host.isEmpty() || port == null || port.isEmpty()) {
+            return null;
+        }
 
         Request request = new Request.Builder()
-                .url(HTTPS + device.getHost() + COLON + device.getPort() + SLASH + GET_MODE)
+                .url(HTTPS + host + COLON + port + SLASH + GET_MODE)
                 .build();
 
         String answer = null;

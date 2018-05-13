@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="@{(v) -> deviceViewModel.connect()}"
-                android:text="@{deviceViewModel.isConnected ? @string/disconnect : @string/connect}" />
+                android:text="@{deviceViewModel.isConnected ? @string/reconnect : @string/connect}" />
 
             <Button
                 android:id="@+id/button_setting"

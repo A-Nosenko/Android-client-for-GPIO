@@ -107,17 +107,13 @@ public class DeviceViewModel extends BaseObservable implements ConnectionButton 
     @Override
     public void connect() {
         setConnectingInProcess(true);
-        new ConnectionTask().execute(!isConnected());
+        new ConnectionTask().execute();
     }
 
-    private class ConnectionTask extends AsyncTask<Boolean, Void, String> {
+    private class ConnectionTask extends AsyncTask<Void, Void, String> {
 
         @Override
-        protected String doInBackground(Boolean... args) {
-            if (args.length > 0 && !args[0]) {
-                setConnected(false);
-                return null;
-            }
+        protected String doInBackground(Void ... args) {
             return Connector.checkRelayMode(device);
         }
 
