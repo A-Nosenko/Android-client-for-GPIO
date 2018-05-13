@@ -16,7 +16,6 @@ public class Constants {
     public static final String ENABLED = "enabled";
     public static final String CUSTOM_NAME = "customName";
     public static final String HOST = "Host";
-    public static final String PORT = "Port";
     public static final String LOGIN = "Login";
     public static final String PASSWORD = "Password";
 

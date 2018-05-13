@@ -8,7 +8,6 @@ import static make.up.the.tool.gpio_client.config.Constants.EMPTY;
 import static make.up.the.tool.gpio_client.config.Constants.HOST;
 import static make.up.the.tool.gpio_client.config.Constants.LOGIN;
 import static make.up.the.tool.gpio_client.config.Constants.PASSWORD;
-import static make.up.the.tool.gpio_client.config.Constants.PORT;
 
 /**
  * @author Anatolii Nosenko
@@ -19,7 +18,6 @@ public class Device {
 
     private String customName;
     private String host;
-    private String port;
     private String login;
     private String password;
     private boolean connected;
@@ -46,14 +44,6 @@ public class Device {
 
     public void setHost(String host) {
         this.host = host;
-    }
-
-    public String getPort() {
-        return port;
-    }
-
-    public void setPort(String port) {
-        this.port = port;
     }
 
     public String getLogin() {
@@ -86,7 +76,6 @@ public class Device {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(CUSTOM_NAME, getCustomName());
         editor.putString(HOST, getHost());
-        editor.putString(PORT, getPort());
         editor.putString(LOGIN, getLogin());
         editor.putString(PASSWORD, getPassword());
         editor.apply();
@@ -97,7 +86,6 @@ public class Device {
                 .getSharedPreferences(getFactoryName(), Context.MODE_PRIVATE);
         setCustomName(preferences.getString(CUSTOM_NAME, EMPTY));
         setHost(preferences.getString(HOST, EMPTY));
-        setPort(preferences.getString(PORT, EMPTY));
         setLogin(preferences.getString(LOGIN, EMPTY));
         setPassword(preferences.getString(PASSWORD, EMPTY));
     }

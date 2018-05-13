@@ -56,14 +56,6 @@ public class DeviceViewModel extends BaseObservable implements ConnectionButton 
         device.setHost(host);
     }
 
-    public String getPort() {
-        return device.getPort();
-    }
-
-    public void setPort(String port) {
-        device.setPort(port);
-    }
-
     public String getLogin() {
         return device.getLogin();
     }
