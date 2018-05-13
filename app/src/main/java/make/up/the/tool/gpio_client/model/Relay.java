@@ -16,4 +16,20 @@ public class Relay {
         this.customName = customName;
         this.enabled = enabled;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTechnicalName() {
+        return technicalName;
+    }
+
+    public String getCustomName() {
+        return customName;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
 }
