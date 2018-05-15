@@ -14,6 +14,7 @@ import okhttp3.Response;
 import static make.up.the.tool.gpio_client.config.Constants.AUTHORIZATION;
 import static make.up.the.tool.gpio_client.config.Constants.COLON;
 import static make.up.the.tool.gpio_client.config.Constants.GET_MODE;
+import static make.up.the.tool.gpio_client.config.Constants.GET_RELAYS_COUNT;
 import static make.up.the.tool.gpio_client.config.Constants.HTTPS;
 import static make.up.the.tool.gpio_client.config.Constants.LOG_MARKER;
 import static make.up.the.tool.gpio_client.config.Constants.SLASH;
@@ -63,5 +64,29 @@ public class Connector {
             Log.e(LOG_MARKER, e.getMessage());
         }
         return answer;
+    }
+
+    public static int getRelaysCount(Device device) {
+        String host = device.getHost();
+        int result = -1;
+
+        if (host == null || host.isEmpty()) {
+            return result;
+        }
+
+        Request request = new Request.Builder()
+                .url(HTTPS + host + SLASH + GET_RELAYS_COUNT)
+                .build();
+
+        try {
+            Response response = buildOkHttpClient(device).newCall(request).execute();
+            if (response == null) {
+                return result;
+            }
+            result = Integer.valueOf(response.body().string());
+        } catch (IOException | NumberFormatException e) {
+            Log.e(LOG_MARKER, e.getMessage());
+        }
+        return result;
     }
 }

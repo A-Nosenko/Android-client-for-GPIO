@@ -25,6 +25,7 @@ public class Constants {
     public static final String EMPTY = "";
     public static final String AUTHORIZATION = "Authorization";
     public static final String GET_MODE = "getMode";
+    public static final String GET_RELAYS_COUNT = "getRelaysCount";
     public static final String MODE = "mode";
     public static final String MODE_RELAY = "relay";
 

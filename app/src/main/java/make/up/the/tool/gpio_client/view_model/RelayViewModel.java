@@ -18,10 +18,6 @@ public class RelayViewModel extends BaseObservable {
         this.relay = relay;
     }
 
-    public int getRelayId() {
-        return relay.getId();
-    }
-
     public String getRelayTechnicalName() {
         return relay.getTechnicalName();
     }
