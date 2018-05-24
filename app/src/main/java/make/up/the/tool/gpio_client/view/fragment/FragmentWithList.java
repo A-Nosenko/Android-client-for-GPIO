@@ -1,5 +1,6 @@
 package make.up.the.tool.gpio_client.view.fragment;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -83,11 +84,12 @@ public class FragmentWithList extends Fragment implements SettingButton {
 
         @Override
         protected void onPostExecute(Integer count) {
-            if (count == null) {
+            Context context = getContext();
+            if (context == null) {
                 return;
             }
             relaysCount = count;
-            Toast.makeText(getContext(), "Relays count = " + relaysCount, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Relays count = " + relaysCount, Toast.LENGTH_SHORT).show();
         }
     }
 }
