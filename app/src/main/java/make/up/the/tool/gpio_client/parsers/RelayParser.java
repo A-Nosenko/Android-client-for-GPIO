@@ -15,13 +15,11 @@ import static make.up.the.tool.gpio_client.config.Constants.*;
  */
 public class RelayParser {
     private static Relay parce(JSONObject jsonObject) {
-        int id = 0;
         String technicalName = null;
         String customName = null;
         boolean enabled = false;
 
         try {
-            id = jsonObject.getInt(ID);
             technicalName = jsonObject.getString(TECHNICAL_NAME);
             customName = jsonObject.getString(CUSTOM_NAME);
             enabled = jsonObject.getBoolean(ENABLED);
@@ -29,6 +27,6 @@ public class RelayParser {
             Log.e(RelayParser.class.getName(), e.getMessage());
         }
 
-        return new Relay(id, technicalName, customName, enabled);
+        return new Relay(technicalName, customName, enabled);
     }
 }

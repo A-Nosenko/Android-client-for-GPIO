@@ -83,6 +83,9 @@ public class FragmentWithList extends Fragment implements SettingButton {
 
         @Override
         protected void onPostExecute(Integer count) {
+            if (count == null) {
+                return;
+            }
             relaysCount = count;
             Toast.makeText(getContext(), "Relays count = " + relaysCount, Toast.LENGTH_SHORT).show();
         }

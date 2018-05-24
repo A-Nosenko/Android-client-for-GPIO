@@ -2,7 +2,6 @@ package make.up.the.tool.gpio_client.view_model;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.os.AsyncTask;
 
 import make.up.the.tool.gpio_client.model.Relay;
 
