@@ -5,5 +5,5 @@ package make.up.the.tool.gpio_client.view_model.button_interfaces;
  * @version 12 May 2018
  */
 public interface SwitchRelayButton {
-    void switchRelay(boolean state);
+    void switchRelay();
 }

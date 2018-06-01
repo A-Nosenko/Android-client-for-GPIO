@@ -20,7 +20,6 @@ public class Device {
     private String host;
     private String login;
     private String password;
-    private boolean connected;
 
     public Device(String factoryName) {
         this.factoryName = factoryName;
@@ -60,14 +59,6 @@ public class Device {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isConnected() {
-        return connected;
-    }
-
-    public void setConnected(boolean connected) {
-        this.connected = connected;
     }
 
     public void saveSetting(Context context) {
