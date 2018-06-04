@@ -61,6 +61,7 @@ public class FragmentWithSettingDialog extends DialogFragment {
         MainActivity activity = (MainActivity) getActivity();
         if (activity != null) {
             activity.updateTitle();
+            activity.replaceFragment();
         }
     }
 }

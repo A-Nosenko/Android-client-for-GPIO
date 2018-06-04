@@ -23,10 +23,17 @@ public class Connector {
             return null;
         }
 
-        Request request = new Request.Builder()
-                .url(HTTPS + host + SLASH + claim)
-                .build();
-
+        Request request = null;
+        try {
+            request = new Request.Builder()
+                    .url(HTTPS + host + SLASH + claim)
+                    .build();
+        } catch (IllegalArgumentException e) {
+            Log.e(LOG_MARKER, e.getMessage());
+        }
+        if (request == null) {
+            return null;
+        }
         Response response = null;
         try {
             response = ClientBuilder.buildOkHttpClient(device).newCall(request).execute();

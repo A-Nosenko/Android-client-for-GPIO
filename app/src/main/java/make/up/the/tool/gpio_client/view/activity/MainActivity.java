@@ -83,7 +83,7 @@ public class MainActivity extends SingleFragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void replaceFragment() {
+    public void replaceFragment() {
         if ((currentDeviceId < 0) || (currentDeviceId >= DEVICE_COUNT)) {
             return;
         }
